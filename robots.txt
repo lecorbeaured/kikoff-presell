@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kikoff.ericcoste.com/sitemap.xml
+
+# Block irrelevant crawling
+Disallow: /cdn-cgi/
