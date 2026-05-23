@@ -774,6 +774,258 @@
       .idiq-score-mock { width: 100%; }
     }
 
+
+    /* ---- CREDIT SCORE SIMULATOR ---- */
+    .sim-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 32px;
+    }
+
+    .sim-hero {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .sim-ring {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      flex-shrink: 0;
+    }
+
+    .sim-ring svg { width: 110px; height: 110px; }
+
+    #sim-gauge-arc { transition: stroke-dashoffset 0.5s, stroke 0.5s; }
+
+    .sim-ring-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sim-score-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    .sim-score-lbl {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .sim-hero-info { flex: 1; }
+
+    .sim-hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .sim-hero-sub {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .sim-rating-pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 12px;
+      border-radius: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .sim-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .sim-control-row {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+    }
+
+    .sim-control-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .sim-control-label {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .sim-control-val {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .sim-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 6px;
+    }
+
+    .sim-badge-green  { background: #e8f7ee; color: #0a7a3c; }
+    .sim-badge-warn   { background: #fef3c7; color: #92400e; }
+    .sim-badge-danger { background: #fee2e2; color: #991b1b; }
+
+    .sim-range {
+      width: 100%;
+      accent-color: var(--green);
+    }
+
+    .sim-factors {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .sim-factor {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    .sim-factor-num {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .sim-factor-name {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    .sim-factor-bar {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+
+    .sim-factor-fill {
+      height: 100%;
+      border-radius: 2px;
+    }
+
+    .sim-projection {
+      background: linear-gradient(135deg, rgba(13,158,78,0.06), rgba(13,158,78,0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      margin-bottom: 20px;
+    }
+
+    .sim-proj-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .sim-proj-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .sim-proj-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .sim-proj-featured { border-color: var(--green); }
+
+    .sim-proj-day {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .sim-proj-score {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 4px;
+      color: var(--text);
+      transition: color 0.3s;
+    }
+
+    .sim-proj-delta {
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .sim-chart-wrap {
+      position: relative;
+      height: 200px;
+      margin-bottom: 24px;
+    }
+
+    .sim-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .sim-cta-btn {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .sim-wrap { padding: 22px 16px; }
+      .sim-hero { flex-direction: column; text-align: center; }
+      .sim-factors { grid-template-columns: repeat(3, 1fr); }
+      .sim-proj-grid { grid-template-columns: repeat(3, 1fr); }
+      .sim-cta-row { flex-direction: column; }
+      .sim-cta-btn { min-width: unset; }
+    }
+
     /* ---- ARTICLES ---- */
     .articles-grid {
       display: flex;
@@ -1334,6 +1586,153 @@
     </div>
   </section>
 
+
+  <!-- CREDIT SCORE SIMULATOR -->
+  <section class="section" id="credit-score-simulator" aria-labelledby="sim-heading">
+    <h2 id="sim-heading">Free Credit Score <span>Simulator</span></h2>
+    <p class="section-intro">Enter your current score, adjust the factors below, and see your projected score after 30, 60, and 90 days of positive action.</p>
+
+    <div class="sim-wrap">
+
+      <!-- Score hero -->
+      <div class="sim-hero">
+        <div class="sim-ring">
+          <svg viewBox="0 0 120 120" role="img" aria-label="Score gauge">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#e5e7eb" stroke-width="10"/>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#0d9e4e" stroke-width="10"
+              stroke-dasharray="314" stroke-dashoffset="314" stroke-linecap="round"
+              transform="rotate(-90 60 60)" id="sim-gauge-arc"/>
+          </svg>
+          <div class="sim-ring-center">
+            <div class="sim-score-num" id="sim-display-score">650</div>
+            <div class="sim-score-lbl">current</div>
+          </div>
+        </div>
+        <div class="sim-hero-info">
+          <div class="sim-hero-title">Your Score Simulator</div>
+          <div class="sim-hero-sub">Drag the sliders to model how paying down debt, disputing errors, or adding Kikoff changes your score trajectory.</div>
+          <span class="sim-rating-pill" id="sim-rating-pill">Good</span>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="sim-controls">
+
+        <div class="sim-control-row">
+          <div class="sim-control-header">
+            <span class="sim-control-label">Current credit score</span>
+            <span class="sim-control-val" id="sim-base-val">650</span>
+          </div>
+          <input type="range" min="300" max="850" value="650" step="1" id="sim-base" aria-label="Current credit score" class="sim-range">
+        </div>
+
+        <div class="sim-control-row">
+          <div class="sim-control-header">
+            <span class="sim-control-label">Credit utilization <span class="sim-badge sim-badge-warn" id="sim-util-badge">High impact</span></span>
+            <span class="sim-control-val"><span id="sim-util-val">60</span>% used</span>
+          </div>
+          <input type="range" min="0" max="100" value="60" step="1" id="sim-util" aria-label="Credit utilization" class="sim-range">
+        </div>
+
+        <div class="sim-control-row">
+          <div class="sim-control-header">
+            <span class="sim-control-label">Late payments on record <span class="sim-badge sim-badge-danger">35% of score</span></span>
+            <span class="sim-control-val" id="sim-late-val">2 late payments</span>
+          </div>
+          <input type="range" min="0" max="10" value="2" step="1" id="sim-late" aria-label="Late payments" class="sim-range">
+        </div>
+
+        <div class="sim-control-row">
+          <div class="sim-control-header">
+            <span class="sim-control-label">Errors disputed &amp; removed</span>
+            <span class="sim-control-val" id="sim-dispute-val">0 errors fixed</span>
+          </div>
+          <input type="range" min="0" max="5" value="0" step="1" id="sim-dispute" aria-label="Errors disputed" class="sim-range">
+        </div>
+
+        <div class="sim-control-row">
+          <div class="sim-control-header">
+            <span class="sim-control-label">Kikoff credit builder <span class="sim-badge sim-badge-green">+22 pts avg</span></span>
+            <span class="sim-control-val" id="sim-kikoff-val">Not added</span>
+          </div>
+          <input type="range" min="0" max="1" value="0" step="1" id="sim-kikoff" aria-label="Kikoff added" class="sim-range">
+        </div>
+
+        <div class="sim-control-row">
+          <div class="sim-control-header">
+            <span class="sim-control-label">IdentityIQ monitoring <span class="sim-badge sim-badge-green">Catches errors fast</span></span>
+            <span class="sim-control-val" id="sim-idiq-val">Not added</span>
+          </div>
+          <input type="range" min="0" max="1" value="0" step="1" id="sim-idiq" aria-label="IdentityIQ added" class="sim-range">
+        </div>
+
+      </div>
+
+      <!-- FICO factors -->
+      <div class="sim-factors">
+        <div class="sim-factor">
+          <div class="sim-factor-num" style="color:#0d9e4e">35%</div>
+          <div class="sim-factor-name">Payment history</div>
+          <div class="sim-factor-bar"><div class="sim-factor-fill" style="width:35%;background:#0d9e4e"></div></div>
+        </div>
+        <div class="sim-factor">
+          <div class="sim-factor-num" style="color:#2563eb">30%</div>
+          <div class="sim-factor-name">Utilization</div>
+          <div class="sim-factor-bar"><div class="sim-factor-fill" style="width:30%;background:#2563eb"></div></div>
+        </div>
+        <div class="sim-factor">
+          <div class="sim-factor-num" style="color:#7c3aed">15%</div>
+          <div class="sim-factor-name">History length</div>
+          <div class="sim-factor-bar"><div class="sim-factor-fill" style="width:15%;background:#7c3aed"></div></div>
+        </div>
+        <div class="sim-factor">
+          <div class="sim-factor-num" style="color:#ea580c">10%</div>
+          <div class="sim-factor-name">Credit mix</div>
+          <div class="sim-factor-bar"><div class="sim-factor-fill" style="width:10%;background:#ea580c"></div></div>
+        </div>
+        <div class="sim-factor">
+          <div class="sim-factor-num" style="color:#db2777">10%</div>
+          <div class="sim-factor-name">New credit</div>
+          <div class="sim-factor-bar"><div class="sim-factor-fill" style="width:10%;background:#db2777"></div></div>
+        </div>
+      </div>
+
+      <!-- Projection cards -->
+      <div class="sim-projection">
+        <div class="sim-proj-title">Your 90-day projection</div>
+        <div class="sim-proj-grid">
+          <div class="sim-proj-card">
+            <div class="sim-proj-day">30 days</div>
+            <div class="sim-proj-score" id="sim-p30">657</div>
+            <div class="sim-proj-delta" id="sim-d30" style="color:#0d9e4e">+7</div>
+          </div>
+          <div class="sim-proj-card">
+            <div class="sim-proj-day">60 days</div>
+            <div class="sim-proj-score" id="sim-p60">668</div>
+            <div class="sim-proj-delta" id="sim-d60" style="color:#0d9e4e">+18</div>
+          </div>
+          <div class="sim-proj-card sim-proj-featured">
+            <div class="sim-proj-day">90 days</div>
+            <div class="sim-proj-score" id="sim-p90" style="color:#0d9e4e">682</div>
+            <div class="sim-proj-delta" id="sim-d90" style="color:#0d9e4e">+32</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart -->
+      <div class="sim-chart-wrap">
+        <canvas id="sim-chart" role="img" aria-label="Line chart of projected credit score over 90 days">Projected credit score over 30, 60, and 90 days.</canvas>
+      </div>
+
+      <!-- CTAs -->
+      <div class="sim-cta-row">
+        <a href="https://kikoff.pxf.io/c/7007975/2344833/14994" rel="sponsored noopener" target="_blank" class="btn-primary sim-cta-btn">Start Building with Kikoff — $5/mo &rarr;</a>
+        <a href="https://www.identityiq.com/sc-securemax.aspx?offercode=431297RY" rel="sponsored noopener" target="_blank" class="btn-outline sim-cta-btn">Monitor with IdentityIQ &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
   <!-- EMAIL CAPTURE -->
   <section class="section email-section" id="free-guide" aria-labelledby="email-heading">
     <div class="email-box">
@@ -1483,6 +1882,7 @@
   <p>&copy; <span data-year></span> Eric Coste. All rights reserved.</p>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
   const yr = new Date().getFullYear();
   document.querySelectorAll('[data-year]').forEach(el => el.textContent = yr);
@@ -1525,6 +1925,163 @@
       }
     });
   }
+
+  // ---- CREDIT SCORE SIMULATOR ----
+  (function(){
+    const g = id => document.getElementById(id);
+
+    let simChart;
+
+    function getRating(s){
+      if(s>=800) return ['Exceptional','#dcfce7','#166534'];
+      if(s>=740) return ['Very good','#dbeafe','#1e40af'];
+      if(s>=670) return ['Good','#e8f7ee','#0a7a3c'];
+      if(s>=580) return ['Fair','#fef3c7','#92400e'];
+      return ['Poor','#fee2e2','#991b1b'];
+    }
+
+    function simCalc(){
+      const base     = parseInt(g('sim-base').value);
+      const util     = parseInt(g('sim-util').value);
+      const late     = parseInt(g('sim-late').value);
+      const disputes = parseInt(g('sim-dispute').value);
+      const kikoff   = parseInt(g('sim-kikoff').value);
+      const idiq     = parseInt(g('sim-idiq').value);
+
+      let delta = 0;
+      if(util <= 10)       delta += 30;
+      else if(util <= 30)  delta += 15;
+      else if(util <= 50)  delta += 0;
+      else if(util <= 75)  delta -= 20;
+      else                 delta -= 40;
+
+      delta -= late * 12;
+      delta += disputes * 18;
+      if(kikoff) delta += 22;
+      if(idiq)   delta += 8;
+
+      const clamp = v => Math.min(850, Math.max(300, v));
+      const d30 = clamp(Math.round(base + delta * 0.25));
+      const d60 = clamp(Math.round(base + delta * 0.60));
+      const d90 = clamp(Math.round(base + delta));
+      return { base, d30, d60, d90 };
+    }
+
+    function updateGauge(score){
+      const pct    = (score - 300) / 550;
+      const offset = Math.round(314 - pct * 314);
+      const arc    = g('sim-gauge-arc');
+      arc.style.strokeDashoffset = offset;
+      arc.style.stroke = score >= 740 ? '#2563eb' : score >= 670 ? '#0d9e4e' : score >= 580 ? '#ea580c' : '#dc2626';
+    }
+
+    function updateChart(base, d30, d60, d90){
+      const data  = [base, d30, d60, d90];
+      const color = d90 >= base ? '#0d9e4e' : '#dc2626';
+      const minY  = Math.max(300, Math.min(...data) - 25);
+      const maxY  = Math.min(850, Math.max(...data) + 25);
+
+      if(simChart){
+        simChart.data.datasets[0].data  = data;
+        simChart.data.datasets[0].borderColor = color;
+        simChart.data.datasets[0].pointBackgroundColor = data.map((_,i) => i===3 ? color : '#fff');
+        simChart.data.datasets[0].pointBorderColor = [color,color,color,color];
+        simChart.options.scales.y.min   = minY;
+        simChart.options.scales.y.max   = maxY;
+        simChart.update('none');
+        return;
+      }
+
+      simChart = new Chart(g('sim-chart'),{
+        type:'line',
+        data:{
+          labels:['Now','30 days','60 days','90 days'],
+          datasets:[{
+            label:'Score',
+            data,
+            borderColor: color,
+            borderWidth: 2,
+            pointRadius: [4,4,4,7],
+            pointBorderWidth: 2,
+            pointBorderColor: [color,color,color,color],
+            pointBackgroundColor: ['#fff','#fff','#fff',color],
+            tension: 0.35,
+            fill: false
+          }]
+        },
+        options:{
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: { duration: 200 },
+          plugins:{
+            legend:{ display: false },
+            tooltip:{ callbacks:{ label: ctx => ' Score: ' + ctx.parsed.y } }
+          },
+          scales:{
+            y:{
+              min: minY, max: maxY,
+              ticks:{ stepSize:10, color:'#888', font:{ size:11 } },
+              grid:{ color:'rgba(0,0,0,0.06)' }
+            },
+            x:{
+              ticks:{ color:'#888', font:{ size:11 } },
+              grid:{ display: false }
+            }
+          }
+        }
+      });
+    }
+
+    function simRender(){
+      const util     = parseInt(g('sim-util').value);
+      const late     = parseInt(g('sim-late').value);
+      const disputes = parseInt(g('sim-dispute').value);
+      const kikoff   = parseInt(g('sim-kikoff').value);
+      const idiq     = parseInt(g('sim-idiq').value);
+      const { base, d30, d60, d90 } = simCalc();
+
+      g('sim-base-val').textContent    = base;
+      g('sim-display-score').textContent = base;
+      g('sim-util-val').textContent    = util;
+      g('sim-late-val').textContent    = late === 1 ? '1 late payment' : late + ' late payments';
+      g('sim-dispute-val').textContent = disputes === 0 ? '0 errors fixed' : disputes + ' error' + (disputes>1?'s':'') + ' fixed';
+      g('sim-kikoff-val').textContent  = kikoff ? 'Added — reporting starts' : 'Not added';
+      g('sim-idiq-val').textContent    = idiq ? 'Active monitoring on' : 'Not added';
+
+      const badge = g('sim-util-badge');
+      if(util <= 30){ badge.textContent='Good range'; badge.className='sim-badge sim-badge-green'; }
+      else if(util <= 50){ badge.textContent='Moderate'; badge.className='sim-badge sim-badge-warn'; }
+      else{ badge.textContent='High impact'; badge.className='sim-badge sim-badge-danger'; }
+
+      updateGauge(base);
+
+      const [rText, rBg, rColor] = getRating(base);
+      const pill = g('sim-rating-pill');
+      pill.textContent     = rText;
+      pill.style.background = rBg;
+      pill.style.color      = rColor;
+
+      const sign   = n => (n >= 0 ? '+' : '') + n;
+      const dcolor = n => n >= 0 ? '#0d9e4e' : '#dc2626';
+
+      g('sim-p30').textContent = d30;
+      g('sim-p60').textContent = d60;
+      g('sim-p90').textContent = d90;
+      g('sim-d30').textContent = sign(d30 - base); g('sim-d30').style.color = dcolor(d30-base);
+      g('sim-d60').textContent = sign(d60 - base); g('sim-d60').style.color = dcolor(d60-base);
+      g('sim-d90').textContent = sign(d90 - base); g('sim-d90').style.color = dcolor(d90-base);
+      g('sim-p90').style.color = dcolor(d90-base);
+
+      updateChart(base, d30, d60, d90);
+    }
+
+    ['sim-base','sim-util','sim-late','sim-dispute','sim-kikoff','sim-idiq'].forEach(id=>{
+      g(id).addEventListener('input', simRender);
+    });
+
+    simRender();
+  })();
+
 </script>
 </body>
 </html>
