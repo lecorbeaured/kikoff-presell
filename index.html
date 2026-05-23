@@ -641,6 +641,139 @@
     footer a { color: var(--text-muted); text-decoration: none; }
     footer a:hover { color: var(--green); }
 
+
+    /* ---- IDIQ BANNER ---- */
+    .idiq-banner {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      background: linear-gradient(135deg, #f0faf5, #e4f5ec);
+      border: 1.5px solid rgba(13,158,78,0.2);
+      border-radius: 20px;
+      padding: 44px 40px;
+    }
+
+    .idiq-banner-left { flex: 1; }
+
+    .idiq-tag {
+      display: inline-block;
+      background: rgba(13,158,78,0.12);
+      border: 1px solid rgba(13,158,78,0.3);
+      color: var(--green);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 40px;
+      margin-bottom: 14px;
+    }
+
+    .idiq-banner-left p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .idiq-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .idiq-list li {
+      font-size: 0.9rem;
+      color: var(--text);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .idiq-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .idiq-banner-right {
+      flex-shrink: 0;
+    }
+
+    .idiq-score-mock {
+      background: white;
+      border: 1.5px solid rgba(13,158,78,0.2);
+      border-radius: 16px;
+      padding: 28px 32px;
+      text-align: center;
+      min-width: 180px;
+      box-shadow: 0 4px 24px rgba(13,158,78,0.08);
+    }
+
+    .idiq-score-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .idiq-score-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3rem;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .idiq-score-bar-wrap {
+      height: 6px;
+      background: #e0e0e0;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+
+    .idiq-score-bar {
+      height: 100%;
+      width: 68%;
+      background: linear-gradient(90deg, #0d9e4e, #2edd7a);
+      border-radius: 10px;
+    }
+
+    .idiq-score-sub {
+      font-size: 0.8rem;
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .idiq-bureaus {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .idiq-bureaus span {
+      font-size: 0.68rem;
+      font-weight: 700;
+      background: var(--green);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 640px) {
+      .idiq-banner { flex-direction: column; padding: 28px 22px; }
+      .idiq-banner-right { width: 100%; }
+      .idiq-score-mock { width: 100%; }
+    }
+
     /* ---- ARTICLES ---- */
     .articles-grid {
       display: flex;
@@ -1077,6 +1210,40 @@
     </div>
   </section>
 
+  <!-- IDIQ BANNER -->
+  <section class="section idiq-banner-section" id="credit-monitoring" aria-labelledby="idiq-heading">
+    <div class="idiq-banner">
+      <div class="idiq-banner-left">
+        <div class="idiq-tag">Recommended Add-On</div>
+        <h2 id="idiq-heading" style="margin-bottom:10px;">Complete the Stack: <span>Monitor While You Build</span></h2>
+        <p>Kikoff builds your credit. IdentityIQ watches over it. Together they cover both sides of your score — growth and protection. IdentityIQ monitors all 3 bureaus 24/7, alerts you to suspicious activity, and gives you daily updated scores so you can track your Kikoff progress in real time.</p>
+        <ul class="idiq-list">
+          <li>Daily 3-bureau credit score updates</li>
+          <li>Real-time identity theft alerts</li>
+          <li>$1 million identity theft insurance</li>
+          <li>Dark web and Social Security monitoring</li>
+        </ul>
+        <div style="margin-top:24px; display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+          <a href="https://www.identityiq.com/sc-securemax.aspx?offercode=431297RY" rel="sponsored noopener" target="_blank" class="btn-primary">Try IdentityIQ &rarr;</a>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Plans from $6.99/mo &bull; 7-day trial available</span>
+        </div>
+      </div>
+      <div class="idiq-banner-right">
+        <div class="idiq-score-mock" aria-hidden="true">
+          <div class="idiq-score-label">Credit Score</div>
+          <div class="idiq-score-num">724</div>
+          <div class="idiq-score-bar-wrap">
+            <div class="idiq-score-bar"></div>
+          </div>
+          <div class="idiq-score-sub">↑ 67 pts in 90 days</div>
+          <div class="idiq-bureaus">
+            <span>EQ</span><span>EX</span><span>TU</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- WHO IT IS FOR -->
   <section class="section" id="who-its-for" aria-labelledby="who-heading">
     <h2 id="who-heading">Who Should <span>Use Kikoff</span>?</h2>
@@ -1233,8 +1400,12 @@
         <h4>What to Watch Out For</h4>
         <p>Avoid paying any company promising to remove accurate negative information for a fee. Under the Credit Repair Organizations Act, no one can legally remove accurate and timely negative data. You can do everything a credit repair company does yourself — for free — by following the steps above.</p>
 
+        <h4>Also: Monitor Your Report While You Repair It</h4>
+        <p>Disputing errors and building positive history takes months. During that window, identity theft or new errors can quietly undo your progress. A credit monitoring service like <a href="https://www.identityiq.com/sc-securemax.aspx?offercode=431297RY" rel="sponsored noopener" target="_blank">IdentityIQ</a> gives you daily 3-bureau score updates and instant alerts the moment anything changes on your report — so you always know where you stand and can catch problems before they compound.</p>
+
         <div class="article-cta">
-          <a href="https://kikoff.pxf.io/c/7007975/2344833/14994" rel="sponsored noopener" target="_blank" class="btn-primary">Start Building Positive History with Kikoff &rarr;</a>
+          <a href="https://kikoff.pxf.io/c/7007975/2344833/14994" rel="sponsored noopener" target="_blank" class="btn-primary">Build Credit with Kikoff &rarr;</a>
+          <a href="https://www.identityiq.com/sc-securemax.aspx?offercode=431297RY" rel="sponsored noopener" target="_blank" class="btn-outline">Monitor with IdentityIQ &rarr;</a>
         </div>
       </article>
 
@@ -1273,9 +1444,12 @@
         <h4>After You Have Your Reports</h4>
         <p>Reviewing your report tells you where you stand, but it does not build credit on its own. If your report shows thin history or past negatives, the next step is to start adding positive payment data. <a href="https://kikoff.pxf.io/c/7007975/2344833/14994" rel="sponsored noopener" target="_blank">Kikoff</a> is one of the simplest ways to do that — $5 a month, no credit check, and reporting to all three bureaus starts immediately.</p>
 
+        <p>And once you are actively building, keep a close eye on those reports. <a href="https://www.identityiq.com/sc-securemax.aspx?offercode=431297RY" rel="sponsored noopener" target="_blank">IdentityIQ</a> monitors all three bureaus daily and sends instant alerts if anything changes — a new account, a missed payment, a hard inquiry you did not authorize. It is the easiest way to catch errors the moment they appear rather than discovering them 12 months later when the damage is already done.</p>
+
         <div class="article-cta">
-          <a href="https://www.annualcreditreport.com" target="_blank" rel="noopener" class="btn-outline">Get Your Free Report at AnnualCreditReport.com &rarr;</a>
-          <a href="https://kikoff.pxf.io/c/7007975/2344833/14994" rel="sponsored noopener" target="_blank" class="btn-primary">Then Build Credit with Kikoff &rarr;</a>
+          <a href="https://www.annualcreditreport.com" target="_blank" rel="noopener" class="btn-outline">Get Your Free Report &rarr;</a>
+          <a href="https://kikoff.pxf.io/c/7007975/2344833/14994" rel="sponsored noopener" target="_blank" class="btn-primary">Build Credit with Kikoff &rarr;</a>
+          <a href="https://www.identityiq.com/sc-securemax.aspx?offercode=431297RY" rel="sponsored noopener" target="_blank" class="btn-outline">Monitor with IdentityIQ &rarr;</a>
         </div>
       </article>
 
