@@ -23,7 +23,7 @@ exports.handler = async function(event) {
   }
 
   const payload = {
-    from: 'Eric Coste <guide@kikoff.ericcoste.com>',
+    from: 'Eric Coste <guide@ericcoste.com>',,
     to: [email],
     subject: 'Your Free 90-Day Credit Score Fix Guide',
     html: `
