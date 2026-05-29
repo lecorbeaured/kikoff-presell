@@ -122,5 +122,32 @@ footer{border-top:1px solid var(--border);padding:40px 20px;background:#f4f7f5}
 const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
+<script>
+(function(){
+  var list = document.getElementById('blog-grid');
+  if (!list) return;
+  list.innerHTML = '';
+  fetch('/posts/posts.json')
+    .then(function(r){ return r.json(); })
+    .then(function(articles){
+      if (!articles.length){ list.innerHTML='<p style="opacity:0.5;text-align:center;padding:2rem;">Articles coming soon.</p>'; return; }
+      articles.forEach(function(a){
+        var card = document.createElement('article');
+        card.className = 'blog-card reveal';
+        card.innerHTML = '<a href="/posts/'+a.slug+'.html" class="blog-card-link">'+
+          '<div class="blog-card-body">'+
+          '<div class="blog-card-meta"><span class="blog-label">Article</span>'+
+          (a.date ? '<time class="blog-date">'+a.date+'</time>' : '')+
+          '</div>'+
+          '<h2 class="blog-card-title">'+a.title+'</h2>'+
+          (a.desc ? '<p class="blog-card-desc">'+a.desc+'...</p>' : '')+
+          '<span class="blog-read-more">Read Article →</span>'+
+          '</div></a>';
+        list.appendChild(card);
+      });
+    })
+    .catch(function(){ list.innerHTML='<p style="opacity:0.5;text-align:center;padding:2rem;">Articles coming soon.</p>'; });
+})();
+</script>
 </body>
 </html>
