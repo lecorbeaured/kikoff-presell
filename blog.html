@@ -124,7 +124,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 <script>
 (function(){
-  var list = document.getElementById('blog-grid');
+  var list = document.querySelector('.blog-grid');
   if (!list) return;
   list.innerHTML = '';
   fetch('/posts/posts.json')
