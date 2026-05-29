@@ -80,31 +80,17 @@ footer{border-top:1px solid var(--border);padding:40px 20px;background:#f4f7f5}
   </div>
 </section>
 <section class="wrap">
-  <div class="blog-grid" id="blog-grid">
+  <div class="blog-grid">
     
     <article class="blog-card reveal">
-      <a href="/posts/the-best-foods-for-sleep-what-to-eat-before-bed-for-deeper-rest.html" class="blog-card-link">
+      <a href="/posts/top-5-credit-score-boosting-strategies-for-2026-improve-your-credit-fast.html" class="blog-card-link">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-label">Article</span>
-            <time class="blog-date">May 26, 2026</time>
+            <time class="blog-date">May 29, 2026</time>
           </div>
-          <h2 class="blog-card-title">The Best Foods for Sleep: What to Eat Before Bed for Deeper Rest</h2>
-          <p class="blog-card-desc">Discover the best foods for sleep with our expert guide. Learn which bedtime snacks and sleep-friendly nutrients can hel...</p>
-          <span class="blog-read-more">Read Article →</span>
-        </div>
-      </a>
-    </article>
-
-    <article class="blog-card reveal">
-      <a href="/posts/the-ultimate-guide-to-creating-a-sleep-friendly-bedroom.html" class="blog-card-link">
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span class="blog-label">Article</span>
-            <time class="blog-date">May 23, 2026</time>
-          </div>
-          <h2 class="blog-card-title">The Ultimate Guide to Creating a Sleep-Friendly Bedroom</h2>
-          <p class="blog-card-desc">Discover the ultimate guide to creating a sleep-friendly bedroom. Learn how to optimize your sleep environment and bedro...</p>
+          <h2 class="blog-card-title">Top 5 Credit Score Boosting Strategies for 2026: Improve Your Credit Fast</h2>
+          <p class="blog-card-desc">Discover the top 5 credit score boosting strategies for 2026. Learn actionable tips to improve credit fast with proven m...</p>
           <span class="blog-read-more">Read Article →</span>
         </div>
       </a>
@@ -149,34 +135,6 @@ footer{border-top:1px solid var(--border);padding:40px 20px;background:#f4f7f5}
 <script>
 const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
-<script>
-(function(){
-  var list = document.getElementById('blog-grid');
-  if (!list) return;
-  list.innerHTML = '<p style="opacity:0.5;font-size:0.9rem;text-align:center;padding:2rem;">Loading articles...</p>';
-  fetch('/posts/posts.json')
-    .then(function(r){ return r.json(); })
-    .then(function(articles){
-      list.innerHTML = '';
-      if (!articles.length){ list.innerHTML='<p style="opacity:0.5;text-align:center;padding:2rem;">Articles coming soon.</p>'; return; }
-      articles.forEach(function(a){
-        var card = document.createElement('a');
-        card.href = '/posts/' + a.slug + '.html';
-        card.className = 'blog-card reveal';
-        card.innerHTML =
-          '<div class="blog-card-link"><div class="blog-card-body">' +
-          '<div class="blog-card-meta"><span class="blog-label">Article</span>' +
-          (a.date ? '<time class="blog-date">'+a.date+'</time>' : '') +
-          '</div><h2 class="blog-card-title">'+a.title+'</h2>' +
-          (a.desc ? '<p class="blog-card-desc">'+a.desc+'</p>' : '') +
-          '<span class="blog-read-more">Read Article &#x2192;</span>' +
-          '</div></div>';
-        list.appendChild(card);
-      });
-    })
-    .catch(function(){ list.innerHTML='<p style="opacity:0.5;text-align:center;padding:2rem;">Articles coming soon.</p>'; });
-})();
 </script>
 </body>
 </html>
